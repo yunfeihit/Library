@@ -3,16 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Library</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href='imgs/library.png' type="image/x-icon">
+
 </head>
 <body>
-    
-    <header>
-        
-    </header>
 
-    
-    
+<!-- Whole Container -->
+    <div id="whole-container">
+
+<!-- Header -->
+        <div id="header">
+            
+            <!-- Title Block -->
+            <div id="title-block">
+                <img src="imgs/books-stack-of-three.png" alt="books">
+                <p>My Library</p>
+            </div>
+
+            
+            <!-- Book Count Block-->
+            <div id="count-block">
+                <p>Library Log:</p>
+                <table>
+                    <tr>
+                        <td>Total Book Count:</td>
+                        <td id="total-book-count">0</td>
+                    </tr>
+                    <tr>
+                        <td>Book Read:</td>
+                        <td id="read-book-count">0</td>
+                    </tr>
+                    <tr>
+                        <td>Book Not Read:</td>
+                        <td id="not-read-book-count">0</td>
+                    </tr>
+                </table>
+
+            </div>
+
+        </div>
+
+
+<!-- Main Part -->
+        <div id="main">
+
+
+    <!-- Add Book Button -->
+            <button id="add-book-btn">+ Add Book</button>
+
+
+    <!-- Set the 'Add Book Dialog' -->
+            <dialog id="add-book-dialog">
+                <form action="#" method="post">
+                    <caption>Add a new book</caption>
+                    <label for="">Book Name:</label>
+                    <input type="text" id="book-name-input" value="Harry Potter">
+
+
+
+
+
+
+                </form>
+            </dialog>
 
 
 
@@ -27,6 +83,19 @@
 
 
 
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+    </div>
 
 </body>
 </html>

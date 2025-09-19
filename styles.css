@@ -97,11 +97,11 @@ td {
     background-color: var(--grey);
 }
 
-button {
+#add-book-btn {
     width: 150px;
-    height: 60px;
+    height: 45px;
     font-size: 22px;
-    border-radius: 15px;
+    border-radius: 8px;
     background-color: white;
     box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.1);
     display: block;
@@ -113,3 +113,71 @@ button:active {
     box-shadow: 5px 3px 6px rgba(0, 0, 0, 0.1);
     background-color: #f0f0f0;
 }
+
+/* Dialog Design */
+dialog {
+        /* Make the Dialog show in the center of viewport */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* other style design */
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+input::placeholder {
+    color: grey;
+}
+
+/* Dialog Background Design */
+dialog::backdrop {
+    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+    /* make the form grid */
+form {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    justify-items: start;
+    grid-row-gap: 20px;
+    grid-column-gap: 10px;
+}
+
+form > input {
+    width: 100px;
+}
+
+form > h3 {
+    grid-column: 1 / -1;
+    justify-self: center;
+}
+
+#read-check-box {
+    grid-column: 1 / -1;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+}
+
+#submit-btn {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 80px;
+    height: 30px;
+    font-size: 18px;
+}
+
+
+
+
+
+
+

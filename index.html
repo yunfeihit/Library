@@ -57,21 +57,27 @@
 
     <!-- Set the 'Add Book Dialog' -->
             <dialog id="add-book-dialog">
-                <form action="#" method="post">
-                    <caption>Add a new book</caption>
-                    <label for="">Book Name:</label>
-                    <input type="text" id="book-name-input" value="Harry Potter">
+                <form action="#" method="post" id="book-form">
+                    <h3>Add a new book</h3>
+                    <label for="book-name-input">Book Name:</label>
+                    <input type="text" id="book-name-input" name="book" placeholder="Harry Potter" required>
+                    <label for="author-input">Author:</label>
+                    <input type="text" id="author-input" name="author" placeholder="J.K. Rowling" required>
+                    <label for="pages-input">Pages:</label>
+                    <input type="number" id="pages-input" name="pages" placeholder="223" min='0' required>
 
+                    <div id="read-check-box">
+                        <label for="read-check">Have you read it?</label>
+                        <input type="checkbox" name="read" id="ifRead-input">
+                    </div>
 
-
-
-
+                    <button type="submit" id="submit-btn">Submit</button>
 
                 </form>
             </dialog>
 
-
-
+            
+            
 
 
 

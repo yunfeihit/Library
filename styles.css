@@ -57,13 +57,13 @@
 }
 
 /* Header count block */
-#count-block {
+#library-log-block {
     display: flex;
     align-items: center;
     gap: 25px;
 }
 
-#count-block p {
+#library-log-block p {
     color: var(--blue);
     font-size: 28px;
 }
@@ -175,9 +175,44 @@ form > h3 {
     font-size: 18px;
 }
 
+#cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+    padding: 24px 24px 12px 24px;
+}
 
+/* toggle exist-alert*/
+#exist-alert {
+    display: none;
+    color: red;
+    font-size: 14px;
+    grid-column: 1 / -1;
+    padding: 0;
+}
 
+/* define the styles of the cards */
+.card {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #fff;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid black;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);  
+    text-align: center;
+}
 
+.card h2 {
+    font-weight: 100;
+}
 
+.card > * {
+    margin-top: 5px;
+}
 
-
+.card button {
+    width: 80px;
+    height: 30px;
+    font-size: 18px;
+}

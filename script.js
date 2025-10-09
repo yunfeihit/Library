@@ -12,8 +12,6 @@ const notReadBookCountLog = document.querySelector('#not-read-book-count');
 addBookBtn.addEventListener('click', () => {
     dialog.showModal();
 })
-
-
     // Set the Close Behavior of dialog: if click outside of the dialog, close the dialog
 dialog.addEventListener('click', (event) => {
     // get the DOMrect object of the dialog
@@ -139,7 +137,7 @@ function checkIfBookExist (bookName) {
 submitBtn.addEventListener('click', (event) => {
     // prevent the default behavior of the form(and redefin it)
     event.preventDefault();
-    // check the form validity by JS(since the default behavior is prevent):
+    // check the form validity by JS(since the default behavior is prevent), and then get the 'book' property from the form:
     if (form.checkValidity()) {
         const book = document.querySelector('#book-name-input').value;
         const author = document.querySelector('#author-input').value;

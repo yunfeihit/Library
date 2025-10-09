@@ -132,6 +132,7 @@ input::placeholder {
 }
 
 /* Dialog Background Design */
+/* make the background of the dialog blur */
 dialog::backdrop {
     backdrop-filter: blur(2px);
     background-color: rgba(0, 0, 0, 0.1);

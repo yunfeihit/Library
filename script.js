@@ -31,18 +31,20 @@ dialog.addEventListener('click', (event) => {
 // Set the Data Structure
 const myLibrary = [];
 
-//Object Constructor: Book
-function Book(bookName, author, pages, ifRead) {
-    this.bookName = bookName;
-    this.author = author;
-    this.pages = pages;
-    this.ifRead = ifRead;
-}
+// Update a Class(Book)
+class Book {
+    constructor(bookName, author, pages, ifRead) {
+        this.bookName = bookName;
+        this.author = author;
+        this.pages = pages;
+        this.ifRead = ifRead;
+    }
 
-// Function: Create a book object and add it to the Library 
-function addBookToLibrary(bookName, author, pages, ifRead) {
-    const oneBook = new Book(bookName, author, pages, ifRead);
-    myLibrary.push(oneBook);
+    // Class Method: Create a book object and add it to the Library 
+    addBookToLibrary() {
+        myLibrary.push(this);
+    }
+    
 }
 
 // Function: Show the Books by Cards 
@@ -148,7 +150,8 @@ submitBtn.addEventListener('click', (event) => {
             return
         };
     // if the Validity is checked, run 'addBookToLibrary' function
-        addBookToLibrary(book, author, pages, ifRead);
+        const newBook = new Book(book, author, pages, ifRead);
+        newBook.addBookToLibrary();
     // run 'showCards' function
         showCards(myLibrary);
     // run updateLibraryLog function

@@ -137,32 +137,61 @@ function checkIfBookExist (bookName) {
     // 7. update the Library log
     // 8. close the dialog
 submitBtn.addEventListener('click', (event) => {
-    // prevent the default behavior of the form(and redefin it)
+
     event.preventDefault();
-    // check the form validity by JS(since the default behavior is prevent), and then get the 'book' property from the form:
-    if (form.checkValidity()) {
-        const book = document.querySelector('#book-name-input').value;
-        const author = document.querySelector('#author-input').value;
-        const pages = document.querySelector('#pages-input').value;
-        const ifRead = document.querySelector('#ifRead-input').checked;
-    // check if the book(name) is already exist
-        if (checkIfBookExist(book)) {
-            return
-        };
-    // if the Validity is checked, run 'addBookToLibrary' function
-        const newBook = new Book(book, author, pages, ifRead);
-        newBook.addBookToLibrary();
-    // run 'showCards' function
-        showCards(myLibrary);
-    // run updateLibraryLog function
-        updateLibraryLog();
-    // close the dialog after that
-        dialog.close();
+
+    const bookNameInput = document.querySelector('#book-name-input');
+    const authorInput = document.querySelector('#author-input');
+    const pagesInput = document.querySelector('#pages-input');
+    const ifReadInput = document.querySelector('#ifRead-input');
+
+    bookNameInput.setCustomValidity('');
+    authorInput.setCustomValidity('');
+    pagesInput.setCustomValidity('');
+
+    //check 'book name' validity
+    if(!bookNameInput.checkValidity()) {
+        bookNameInput.setCustomValidity('Book name should like "Dune" or "Harry Potter"')
+    } 
+    
+    //check 'author' validity
+    if(!authorInput.checkValidity()) {
+        authorInput.setCustomValidity('Author name should like "June" or "Frank Herbert')
+    } 
+
+    //check 'pages' validity
+    if(pagesInput.validity.rangeOverflow) {
+        pagesInput.setCustomValidity('There is no such book has this much pages!')
+    } else if(pagesInput.validity.rangeUnderflow){
+        pagesInput.setCustomValidity('I think book should have pages....');
+    } else if(pagesInput.value < 10) {
+        pagesInput.setCustomValidity('There is no such book has so few pages');
     }
-    else {
+
+    if(!form.checkValidity()) {
         form.reportValidity();
+        return;
     }
 
-})
+    //if validity:
 
+    const book = document.querySelector('#book-name-input').value;
+    const author = document.querySelector('#author-input').value;
+    const pages = document.querySelector('#pages-input').value;
+    const ifRead = document.querySelector('#ifRead-input').checked;
 
+    if (checkIfBookExist(book)) {
+        return
+    };
+
+    const newBook = new Book(book, author, pages, ifRead);
+    newBook.addBookToLibrary();
+
+    showCards(myLibrary);
+
+    updateLibraryLog();
+
+    dialog.close();
+    }
+    
+)

@@ -60,14 +60,18 @@
                 <form action="#" method="post" id="book-form">
                     <h3>Add a new book</h3>
                     <label for="book-name-input">Book Name:</label>
-                    <input type="text" id="book-name-input" name="book" placeholder="Harry Potter" required>
+                    <input type="text" id="book-name-input" name="book" placeholder="Dune" 
+                    pattern='^([A-Z][a-z]*)(\s[A-Z][a-z]*)*$' 
+                    required>
                     <!-- exist alert -->
                      <p id="exist-alert">This book is already exist</p>
                      <!-- exist alert -->
                     <label for="author-input">Author:</label>
-                    <input type="text" id="author-input" name="author" placeholder="J.K. Rowling" required>
+                    <input type="text" id="author-input" name="author" placeholder="Frank Herbert" 
+                    pattern='^[A-Z][a-z]+(\s[A-Z][a-z]+){0,2}$'
+                    required>
                     <label for="pages-input">Pages:</label>
-                    <input type="number" id="pages-input" name="pages" placeholder="223" min='0' required>
+                    <input type="number" id="pages-input" name="pages" placeholder="223" min='0' max='200000' required>
 
                     <div id="read-check-box">
                         <label for="read-check">Have you read it?</label>
